@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyNamespace.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyNamespace.Pages"
+    FlyoutIcon="sensors.png">
+    
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
+            <Image Source="sensors.png" />
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Home" Icon="sensors.png">
+        <ShellContent Title="Home"            Icon="home.png"    ContentTemplate="{DataTemplate local:HomePage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://learn.microsoft.com/dotnet/maui/fundamentals/shell" />
+</Shell>

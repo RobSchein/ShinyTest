@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyNamespace.Pages.HomePage"
+             Title="MyProject">
+    <VerticalStackLayout x:Name="vslView">
+        <HorizontalStackLayout>
+            <Button x:Name="btnScan" Text="Scan"
+                    Clicked="OnScanButtonClicked" />
+            <Button x:Name="btnStopScan" Text="Stop Scan"
+                    Clicked="OnStopScanButtonClicked" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Button x:Name="btnConnect" Text="Connect"
+                    Clicked="OnConnectButtonClicked" />
+            <Button x:Name="btnDisconnect" Text="Disconnect"
+                    Clicked="OnDisconnectButtonClicked" />
+        </HorizontalStackLayout>
+        <ActivityIndicator x:Name="activityIndicator" IsRunning="False" IsVisible="False" />
+        <Picker x:Name="pkrDevice" Title="Select a device"
+                SelectedIndexChanged="OnDeviceSelectedIndexChanged"/>
+        <Picker x:Name="pkrService" Title="Select a Service"
+                SelectedIndexChanged="OnServiceSelectedIndexChanged"/>
+        <Picker x:Name="pkrCharacteristic" Title="Select a Characteristic"
+                SelectedIndexChanged="OnCharacteristicSelectedIndexChanged"/>
+        <Label 
+            x:Name="lblStatus"
+            Text="Home!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Button x:Name="btnWrite" Text="Write"
+                    Clicked="OnWriteButtonClicked" />
+            <Editor x:Name="editWriteValue"
+                    Text="Null"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Button x:Name="btnRead" Text="Read"
+                    Clicked="OnReadButtonClicked" />
+            <Label  x:Name="lblReadValue"
+                    Text="Null"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label  x:Name="lblEnabled"
+                    Text="Enabled"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <CheckBox x:Name="chkEnabled"
+                      CheckedChanged="OnCheckBoxCheckedChanged"
+            />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
